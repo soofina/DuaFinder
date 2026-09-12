@@ -100,7 +100,9 @@
 <div id="forgiveness-section" style="display:none; margin-top:30px;">
 
   <h2>🤲 Forgiveness Duas</h2>
-
+<button onclick="goHome()" class="back-button">
+  ← Back to Categories
+</button>
   <div class="card" style="text-align:left;">
     <h3>Dua 1</h3>
 
@@ -146,6 +148,23 @@ function showForgiveness() {
   // Show the forgiveness duas
   document.getElementById("forgiveness-section").style.display = "block";
 }
+  <script>
+function showForgiveness() {
+  // Hide the category buttons
+  document.querySelector(".categories").style.display = "none";
+
+  // Show the forgiveness duas
+  document.getElementById("forgiveness-section").style.display = "block";
+}
+
+function goHome() {
+  // Show the category buttons again
+  document.querySelector(".categories").style.display = "grid";
+
+  // Hide the forgiveness duas
+  document.getElementById("forgiveness-section").style.display = "none";
+}
+</script>
 </script>
 </body>
 </html>
