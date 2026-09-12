@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,5 +45,62 @@
     .categories {
       display: grid;
       gap: 16px;
+      max-width: 500px;
+      margin: auto;
     }
+
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #4D6651;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      background: #EDF5ED;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #6E7F73;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>DuaFinder</h1>
+  <p>Find the right dua when you need it most.</p>
+</header>
+
+<main>
+
+  <h2>Choose a Category</h2>
+
+  <div class="categories">
+    <div class="card">🤲 Forgiveness</div>
+    <div class="card">👨‍👩‍👧 Parents</div>
+    <div class="card">🌿 Anxiety / Peace of Mind</div>
+    <div class="card">📚 Success in Studies / Exams</div>
+    <div class="card">❤️ Health / Healing</div>
+  </div>
+
+</main>
+
+<footer>
+  DuaFinder • Your first app prototype
+</footer>
+
+</body>
+</html>
 
