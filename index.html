@@ -94,7 +94,9 @@
     <div class="card" onclick="showParents()">
   👨‍👩‍👧 Parents
 </div>
-    <div class="card">🌿 Anxiety / Peace of Mind</div>
+    <div class="card" onclick="showAnxiety()">
+  🌿 Anxiety / Peace of Mind
+</div>
     <div class="card">📚 Success in Studies / Exams</div>
     <div class="card">❤️ Health / Healing</div>
   </div>
@@ -177,6 +179,47 @@
     <p><em>Source: Qur'an 14:41.</em></p>
   </div>
 
+
+<div id="anxiety-section" style="display:none; margin-top:30px;">
+
+  <h2>🌿 Duas for Anxiety & Peace of Mind</h2>
+
+  <button onclick="goHome()" class="back-button">
+    ← Back to Categories
+  </button>
+
+  <div class="card" style="text-align:left; margin-top:20px;">
+    <h3>Dua 1 (Qur'an 2:286)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      Our Lord, do not hold us accountable if we forget or make a mistake.
+    </p>
+
+    <p><em>Source: Qur'an 2:286.</em></p>
+  </div>
+
+  <div class="card" style="text-align:left; margin-top:16px;">
+    <h3>Dua 2 (Authentic Hadith)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      O Allah, I seek refuge in You from anxiety and sorrow.
+    </p>
+
+    <p><em>Source: Sahih al-Bukhari.</em></p>
+  </div>
+
 </div>
 </main>
 
@@ -195,6 +238,7 @@
     document.querySelector(".categories").style.display = "grid";
     document.getElementById("forgiveness-section").style.display = "none";
     document.getElementById("parents-section").style.display = "none";
+    document.getElementById("anxiety-section").style.display = "none";
   }
   
     function showParents() {
@@ -207,6 +251,15 @@
   // Show parents section
   document.getElementById("parents-section").style.display = "block";
 }
+  function showAnxiety() {
+  document.querySelector(".categories").style.display = "none";
+
+  document.getElementById("forgiveness-section").style.display = "none";
+  document.getElementById("parents-section").style.display = "none";
+
+  document.getElementById("anxiety-section").style.display = "block";
+}
+
 
 </script>
   
