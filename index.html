@@ -100,6 +100,7 @@
     <div class="card" onclick="showStudies()">
   📚 Success in Studies / Exams
 </div>
+    
     <div class="card" onclick="showHealth()">
   ❤️ Health / Healing
   </div>
@@ -317,56 +318,51 @@
 </footer>
 
 <script>
-function showForgiveness() {
-  document.querySelector(".categories").style.display = "none";
-  document.getElementById("parents-section").style.display = "none";
-  document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("forgiveness-section").style.display = "block";
-}
+  function showForgiveness() {
+    document.querySelector(".categories").style.display = "none";
+    document.getElementById("forgiveness-section").style.display = "block";
+    document.getElementById("parents-section").style.display = "none";
+    document.getElementById("anxiety-section").style.display = "none";
+  }
 
-function showParents() {
-  document.querySelector(".categories").style.display = "none";
-  document.getElementById("forgiveness-section").style.display = "none";
-  document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("parents-section").style.display = "block";
-}
+  function showParents() {
+    document.querySelector(".categories").style.display = "none";
+    document.getElementById("forgiveness-section").style.display = "none";
+    document.getElementById("parents-section").style.display = "block";
+    document.getElementById("anxiety-section").style.display = "none";
+  }
 
-function showAnxiety() {
-  document.querySelector(".categories").style.display = "none";
-  document.getElementById("forgiveness-section").style.display = "none";
-  document.getElementById("parents-section").style.display = "none";
-  document.getElementById("anxiety-section").style.display = "block";
-}
+  function showAnxiety() {
+    document.querySelector(".categories").style.display = "none";
+    document.getElementById("forgiveness-section").style.display = "none";
+    document.getElementById("parents-section").style.display = "none";
+    document.getElementById("anxiety-section").style.display = "block";
+  }
 
-  function showStudies() {
+  function goHome() {
+    document.querySelector(".categories").style.display = "grid";
+    document.getElementById("forgiveness-section").style.display = "none";
+    document.getElementById("parents-section").style.display = "none";
+    document.getElementById("anxiety-section").style.display = "none";
+    document.getElementById("success-section").style.display = "none";
+document.getElementById("health-section").style.display = "none";
+  }
+  function showSuccess() {
   document.querySelector(".categories").style.display = "none";
-
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
   document.getElementById("health-section").style.display = "none";
-
-  document.getElementById("studies-section").style.display = "block";
+  document.getElementById("success-section").style.display = "block";
 }
 
 function showHealth() {
   document.querySelector(".categories").style.display = "none";
-
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("studies-section").style.display = "none";
-
+  document.getElementById("success-section").style.display = "none";
   document.getElementById("health-section").style.display = "block";
-}
-  
-function goHome() {
-  document.querySelector(".categories").style.display = "grid";
-  document.getElementById("forgiveness-section").style.display = "none";
-  document.getElementById("parents-section").style.display = "none";
-  document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("studies-section").style.display = "none";
-  document.getElementById("health-section").style.display = "none";
 }
 </script>
   
