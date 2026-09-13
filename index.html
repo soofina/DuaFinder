@@ -141,31 +141,17 @@
 </footer>
 
 <script>
-function showForgiveness() {
-  // Hide the category buttons
-  document.querySelector(".categories").style.display = "none";
+  function showForgiveness() {
+    document.querySelector(".categories").style.display = "none";
+    document.getElementById("forgiveness-section").style.display = "block";
+  }
 
-  // Show the forgiveness duas
-  document.getElementById("forgiveness-section").style.display = "block";
-}
-  <script>
-function showForgiveness() {
-  // Hide the category buttons
-  document.querySelector(".categories").style.display = "none";
-
-  // Show the forgiveness duas
-  document.getElementById("forgiveness-section").style.display = "block";
-}
-
-function goHome() {
-  // Show the category buttons again
-  document.querySelector(".categories").style.display = "grid";
-
-  // Hide the forgiveness duas
-  document.getElementById("forgiveness-section").style.display = "none";
-}
+  function goHome() {
+    document.querySelector(".categories").style.display = "grid";
+    document.getElementById("forgiveness-section").style.display = "none";
+  }
 </script>
-</script>
+  
 </body>
 </html>
 
