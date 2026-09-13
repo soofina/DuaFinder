@@ -97,8 +97,11 @@
     <div class="card" onclick="showAnxiety()">
   🌿 Anxiety / Peace of Mind
 </div>
-    <div class="card">📚 Success in Studies / Exams</div>
-    <div class="card">❤️ Health / Healing</div>
+    <div class="card" onclick="showStudies()">
+  📚 Success in Studies / Exams
+</div>
+    <div class="card" onclick="showHealth()">
+  ❤️ Health / Healing
   </div>
 
 <div id="forgiveness-section" style="display:none; margin-top:30px;">
@@ -222,11 +225,95 @@
   </div>
 
   </div>
-  
+  <div id="studies-section" class="section" style="display:none; margin-top:30px;">
+
+  <h2>📚 Duas for Success in Studies & Exams</h2>
+
+  <button onclick="goHome()" class="back-button">
+    ← Back to Categories
+  </button>
+
+  <div class="card" style="text-align:left; margin-top:20px;">
+    <h3>Dua 1 (Qur'an 20:114)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      رَّبِّ زِدْنِي عِلْمًا
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      My Lord, increase me in knowledge.
+    </p>
+
+    <p><em>Source: Qur'an 20:114.</em></p>
+  </div>
+
+  <div class="card" style="text-align:left; margin-top:16px;">
+    <h3>Dua 2 (Qur'an 20:25–28)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي يَفْقَهُوا قَوْلِي
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      My Lord, expand my chest, ease my task for me, and untie the knot from my tongue so they may understand my speech.
+    </p>
+
+    <p><em>Source: Qur'an 20:25–28.</em></p>
+  </div>
+
+</div>
+    <div id="health-section" class="section" style="display:none; margin-top:30px;">
+
+  <h2>❤️ Duas for Health & Healing</h2>
+
+  <button onclick="goHome()" class="back-button">
+    ← Back to Categories
+  </button>
+
+  <div class="card" style="text-align:left; margin-top:20px;">
+    <h3>Dua 1 (Authentic Hadith)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      O Allah, Lord of mankind, remove the suffering and grant healing. You are the Healer. There is no healing except Your healing, a healing that leaves no illness behind.
+    </p>
+
+    <p><em>Source: Sahih al-Bukhari & Sahih Muslim.</em></p>
+  </div>
+
+  <div class="card" style="text-align:left; margin-top:16px;">
+    <h3>Dua 2 (Qur'an 26:80)</h3>
+
+    <p style="font-size:24px; direction:rtl;">
+      وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ
+    </p>
+
+    <p><strong>English meaning:</strong></p>
+
+    <p>
+      And when I am ill, it is He who cures me.
+    </p>
+
+    <p><em>Source: Qur'an 26:80.</em></p>
+  </div>
+
+</div>
   </main>
 
 <footer>
-  DuaFinder • Your first app prototype
+  <p><strong>DuaFinder</strong> • Your first app prototype</p>
+  <p style="margin-top:8px; font-size:14px;">
+    🌙 All duas in this app are taken from the Qur'an and authentic Hadith (Sahih collections).
+  </p>
 </footer>
 
 <script>
@@ -251,11 +338,35 @@ function showAnxiety() {
   document.getElementById("anxiety-section").style.display = "block";
 }
 
+  function showStudies() {
+  document.querySelector(".categories").style.display = "none";
+
+  document.getElementById("forgiveness-section").style.display = "none";
+  document.getElementById("parents-section").style.display = "none";
+  document.getElementById("anxiety-section").style.display = "none";
+  document.getElementById("health-section").style.display = "none";
+
+  document.getElementById("studies-section").style.display = "block";
+}
+
+function showHealth() {
+  document.querySelector(".categories").style.display = "none";
+
+  document.getElementById("forgiveness-section").style.display = "none";
+  document.getElementById("parents-section").style.display = "none";
+  document.getElementById("anxiety-section").style.display = "none";
+  document.getElementById("studies-section").style.display = "none";
+
+  document.getElementById("health-section").style.display = "block";
+}
+  
 function goHome() {
   document.querySelector(".categories").style.display = "grid";
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
+  document.getElementById("studies-section").style.display = "none";
+  document.getElementById("health-section").style.display = "none";
 }
 </script>
   
