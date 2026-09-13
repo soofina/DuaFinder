@@ -179,8 +179,9 @@
     <p><em>Source: Qur'an 14:41.</em></p>
   </div>
 
-
-<div id="anxiety-section" style="display:none; margin-top:30px;">
+</div>
+  
+<div id="anxiety-section" class="section" style="display:none; margin-top:30px;">
 
   <h2>🌿 Duas for Anxiety & Peace of Mind</h2>
 
@@ -204,6 +205,8 @@
     <p><em>Source: Qur'an 2:286.</em></p>
   </div>
 
+</div>
+  
   <div class="card" style="text-align:left; margin-top:16px;">
     <h3>Dua 2 (Authentic Hadith)</h3>
 
@@ -228,43 +231,33 @@
 </footer>
 
 <script>
-  function showForgiveness() {
-    document.querySelector(".categories").style.display = "none";
-    document.getElementById("parents-section").style.display = "none";
-    document.getElementById("forgiveness-section").style.display = "block";
-  }
-
-  function goHome() {
-    function goHome() {
-  // Show category buttons again
-  document.querySelector(".categories").style.display = "grid";
-
-  // Hide all dua sections
-  document.getElementById("forgiveness-section").style.display = "none";
+function showForgiveness() {
+  document.querySelector(".categories").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
-  }
-  
-    function showParents() {
-  // Hide the category buttons
+  document.getElementById("forgiveness-section").style.display = "block";
+}
+
+function showParents() {
   document.querySelector(".categories").style.display = "none";
-
-  // Hide forgiveness section (if it was open)
   document.getElementById("forgiveness-section").style.display = "none";
-
-  // Show parents section
+  document.getElementById("anxiety-section").style.display = "none";
   document.getElementById("parents-section").style.display = "block";
 }
-  function showAnxiety() {
-  document.querySelector(".categories").style.display = "none";
 
+function showAnxiety() {
+  document.querySelector(".categories").style.display = "none";
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
-
   document.getElementById("anxiety-section").style.display = "block";
 }
 
-
+function goHome() {
+  document.querySelector(".categories").style.display = "grid";
+  document.getElementById("forgiveness-section").style.display = "none";
+  document.getElementById("parents-section").style.display = "none";
+  document.getElementById("anxiety-section").style.display = "none";
+}
 </script>
   
 </body>
