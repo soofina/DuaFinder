@@ -97,11 +97,11 @@
     <div class="card" onclick="showAnxiety()">
   🌿 Anxiety / Peace of Mind
 </div>
-  <div class="card">
+<div class="card">
   📚 Success in Studies / Exams
 </div>
     
-    <div class="card" onclick="showHealth()">
+<div class="card" onclick="showHealth()">
   ❤️ Health / Healing
   </div>
 </div>
@@ -325,7 +325,6 @@ function showForgiveness() {
   document.getElementById("forgiveness-section").style.display = "block";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("health-section").style.display = "none";
 }
 
 function showParents() {
@@ -342,27 +341,24 @@ function showAnxiety() {
 
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
-  document.getElementById("anxiety-section").style.display = "block";=
-  document.getElementById("health-section").style.display = "none";
+  document.getElementById("anxiety-section").style.display = "block";
 }
-
+    
 function showHealth() {
   document.querySelector(".categories").style.display = "none";
 
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("success-section").style.display = "none";
   document.getElementById("health-section").style.display = "block";
 }
-
+    
 function goHome() {
   document.querySelector(".categories").style.display = "grid";
 
   document.getElementById("forgiveness-section").style.display = "none";
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
-  document.getElementById("success-section").style.display = "none";
   document.getElementById("health-section").style.display = "none";
 }
 </script>
