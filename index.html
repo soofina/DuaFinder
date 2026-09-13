@@ -235,10 +235,14 @@
   }
 
   function goHome() {
-    document.querySelector(".categories").style.display = "grid";
-    document.getElementById("forgiveness-section").style.display = "none";
-    document.getElementById("parents-section").style.display = "none";
-    document.getElementById("anxiety-section").style.display = "none";
+    function goHome() {
+  // Show category buttons again
+  document.querySelector(".categories").style.display = "grid";
+
+  // Hide all dua sections
+  document.getElementById("forgiveness-section").style.display = "none";
+  document.getElementById("parents-section").style.display = "none";
+  document.getElementById("anxiety-section").style.display = "none";
   }
   
     function showParents() {
