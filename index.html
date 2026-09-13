@@ -97,11 +97,10 @@
     <div class="card" onclick="showAnxiety()">
   🌿 Anxiety / Peace of Mind
 </div>
-<div class="card">
+<div class="card"> onclick="showStudies()">
   📚 Success in Studies / Exams
 </div>
-    
-<div class="card" onclick="showHealth()">
+    <div class="card" onclick="showHealth()">
   ❤️ Health / Healing
   </div>
 </div>
@@ -352,6 +351,17 @@ function showHealth() {
   document.getElementById("anxiety-section").style.display = "none";
   document.getElementById("health-section").style.display = "block";
 }
+
+    function showStudies() {
+    document.querySelector(".categories").style.display = "none";
+
+    document.getElementById("forgiveness-section").style.display = "none";
+    document.getElementById("parents-section").style.display = "none";
+    document.getElementById("anxiety-section").style.display = "none";
+    document.getElementById("health-section").style.display = "none";
+
+    document.getElementById("studies-section").style.display = "block";
+}
     
 function goHome() {
   document.querySelector(".categories").style.display = "grid";
@@ -360,6 +370,7 @@ function goHome() {
   document.getElementById("parents-section").style.display = "none";
   document.getElementById("anxiety-section").style.display = "none";
   document.getElementById("health-section").style.display = "none";
+  document.getElementById("studies-section").style.display = "none";
 }
 </script>
   
