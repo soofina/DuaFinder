@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Citizenship Quiz</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: #eaf2ff;
+    color: #263653;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(44, 71, 120, 0.12);
+}
+
+.header {
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    background: #e1eaff;
+    color: #4266a5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    color: #304e83;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #71809a;
+    line-height: 1.6;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #61718d;
+    margin: 25px 0 10px;
+}
+
+.progress {
+    height: 9px;
+    background: #e9edf5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 33.33%;
+    background: #7199df;
+    transition: width 0.3s;
+}
+
+.question {
+    margin-top: 25px;
+}
+
+.question h2 {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+/* Visual illustration */
+
+.visual {
+    background: #f0f5ff;
+    border: 2px solid #dce7fa;
+    border-radius: 20px;
+    padding: 22px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.scene {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    min-height: 120px;
+}
+
+.person {
+    font-size: 65px;
+}
+
+.phone {
+    background: #ffffff;
+    border: 5px solid #526b99;
+    border-radius: 18px;
+    padding: 12px;
+    width: 180px;
+    box-shadow: 0 4px 10px #cbd7eb;
+}
+
+.phone-top {
+    font-size: 12px;
+    font-weight: bold;
+    background: #e3ebfa;
+    padding: 7px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.chat {
+    background: #e5efff;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 6px 0;
+    font-size: 12px;
+    text-align: left;
+}
+
+.chat.right {
+    background: #d9f5e6;
+    text-align: right;
+}
+
+.visual-caption {
+    color: #536887;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Answer choices */
+
+.answers {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.answer {
+    padding: 16px;
+    background: #f7f9fd;
+    border: 2px solid #e0e7f2;
+    border-radius: 13px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    color: #344563;
+    transition: 0.2s;
+}
+
+.answer:hover:not(:disabled) {
+    border-color: #7199df;
+    background: #eef4ff;
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+.answer.correct {
+    border-color: #46aa79;
+    background: #e5f8ed;
+    color: #23784d;
+}
+
+.answer.wrong {
+    border-color: #e58b8b;
+    background: #fff0f0;
+    color: #a13d3d;
+}
+
+.feedback {
+    display: none;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 12px;
+    line-height: 1.5;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.feedback.good {
+    background: #e6f7ed;
+    color: #24784d;
+}
+
+.feedback.bad {
+    background: #fff0ed;
+    color: #a44b3b;
+}
+
+.button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 13px;
+    background: #547dc1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #3e65a6;
+}
+
+.button:disabled {
+    background: #b9c5d9;
+    cursor: not-allowed;
+}
+
+.result {
+    text-align: center;
+    display: none;
+}
+
+.result h2 {
+    color: #304e83;
+    font-size: 28px;
+}
+
+.result-emoji {
+    font-size: 75px;
+    margin: 15px;
+}
+
+.score {
+    font-size: 42px;
+    color: #547dc1;
+    font-weight: bold;
+}
+
+.tip {
+    background: #f0f5ff;
+    padding: 18px;
+    border-radius: 15px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    color: #8793a8;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@media(max-width: 500px) {
+    .container {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .question h2 {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <span class="tag">DIGITAL CITIZENSHIP</span>
+        <h1>Think Before You Share!</h1>
+        <p class="subtitle">
+            Let's test how well you understand online privacy,
+            respect and responsible digital behaviour!
+        </p>
+    </div>
+
+    <div id="quiz">
+
+        <div class="progress-info">
+            <span id="questionNumber">Question 1 of 3</span>
+            <span id="scoreDisplay">Score: 0</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="question">
+            <h2 id="questionText"></h2>
+
+            <div class="visual" id="visual"></div>
+
+            <div class="answers" id="answers"></div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <button class="button" id="nextButton"
+                onclick="nextQuestion()" disabled>
+                Next Question →
+            </button>
+        </div>
+    </div>
+
+    <div class="result" id="result">
+        <div class="result-emoji" id="resultEmoji">🏆</div>
+        <h2>Assessment Completed!</h2>
+        <p>Your final score is:</p>
+        <div class="score" id="finalScore"></div>
+        <p id="resultMessage"></p>
+
+        <div class="tip">
+            <strong>Remember!</strong><br>
+            Always ask for permission before sharing
+            someone's photograph. Respect other people's
+            privacy and think before you post!
+        </div>
+
+        <button class="button" onclick="restartQuiz()">
+            Try Again ↻
+        </button>
+    </div>
+
+    <div class="footer">
+        Be kind. Be respectful. Be a responsible digital citizen. 💙
+    </div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+    question: "1. What is the main problem in this situation?",
+
+    visual: `
+        <div class="scene">
+            <div class="person">🧒🏻</div>
+            <div class="phone">
+                <div class="phone-top">Classroom Group Chat 💬</div>
+                <div class="chat">Look at this photo! 😂</div>
+                <div class="chat right">Haha! That's funny!</div>
+                <div class="chat">📸 Photo shared</div>
+            </div>
+        </div>
+        <p class="visual-caption">
+        A pupil shares a classmate's photograph in the
+        classroom group chat without asking for permission.
+        </p>
+    `,
+
+    answers: [
+        "The pupil is sharing a photograph without permission.",
+        "The pupil is completing homework.",
+        "The pupil is helping a classmate.",
+        "The pupil is searching for information."
+    ],
+
+    correct: 0,
+
+    explanation:
+        "Correct! Sharing someone's photograph without permission violates their privacy and shows a lack of respect."
+},
+
+{
+    question: "2. What should the pupil do BEFORE sharing a classmate's photograph?",
+
+    visual: `
+        <div class="scene">
+            <div class="person">🧑🏻</div>
+            <div style="font-size:35px;">📸</div>
+            <div style="font-size:35px;">❓</div>
+            <div class="person">👧🏻</div>
+        </div>
+        <p class="visual-caption">
+        Imagine you have a photograph of your friend.
+        You want to share it with other classmates.
+        </p>
+    `,
+
+    answers: [
+        "Share it immediately because it is only a joke.",
+        "Ask for the classmate's permission first.",
+        "Send it to more group chats.",
+        "Edit the photograph before sharing it."
+    ],
+
+    correct: 1,
+
+    explanation:
+        "Well done! Asking for consent before sharing someone's photograph respects their privacy and personal boundaries."
+},
+
+{
+    question: "3. You discover that your photograph has been shared without your permission. What is the BEST action?",
+
+    visual: `
+        <div class="scene">
+            <div class="person">😟</div>
+            <div class="phone">
+                <div class="phone-top">Classroom Group Chat 💬</div>
+                <div class="chat">Someone shared your photo.</div>
+                <div class="chat right">Why did you share it?</div>
+                <div class="chat">Seen ✓</div>
+            </div>
+        </div>
+        <p class="visual-caption">
+        You feel uncomfortable after discovering that
+        someone has shared your photograph without consent.
+        </p>
+    `,
+
+    answers: [
+        "Stay silent even though you feel uncomfortable.",
+        "Share their photograph in return.",
+        "Ask them to remove the photograph and seek help from a trusted teacher if necessary.",
+        "Forward the photograph to other friends."
+    ],
+
+    correct: 2,
+
+    explanation:
+        "Excellent! You should communicate your concerns, request removal of the photograph and seek help from a trusted adult or teacher when necessary."
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        `Question ${currentQuestion + 1} of 3`;
+
+    document.getElementById("scoreDisplay").textContent =
+        `Score: ${score}`;
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion + 1) / 3 * 100) + "%";
+
+    document.getElementById("questionText").textContent =
+        q.question;
+
+    document.getElementById("visual").innerHTML =
+        q.visual;
+
+    document.getElementById("feedback").className = "feedback";
+    document.getElementById("feedback").textContent = "";
+
+    document.getElementById("nextButton").disabled = true;
+
+    document.getElementById("nextButton").textContent =
+        currentQuestion === 2 ? "See My Results →" : "Next Question →";
+
+    const answers = document.getElementById("answers");
+
+    answers.innerHTML = "";
+
+    q.answers.forEach((answer, index) => {
+
+        const button = document.createElement("button");
+
+        button.className = "answer";
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " + answer;
+
+        button.onclick = () => checkAnswer(index, button);
+
+        answers.appendChild(button);
+
+    });
+
+}
+
+function checkAnswer(selected, button) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const buttons = document.querySelectorAll(".answer");
+
+    buttons.forEach((btn, index) => {
+
+        btn.disabled = true;
+
+        if (index === q.correct) {
+            btn.classList.add("correct");
+        }
+
+    });
+
+    const feedback = document.getElementById("feedback");
+
+    if (selected === q.correct) {
+
+        score++;
+
+        feedback.className = "feedback show good";
+
+        feedback.innerHTML =
+            "✓ <strong>Correct!</strong><br>" + q.explanation;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        feedback.className = "feedback show bad";
+
+        feedback.innerHTML =
+            "✗ <strong>Not quite!</strong><br>" + q.explanation;
+
+    }
+
+    document.getElementById("scoreDisplay").textContent =
+        `Score: ${score}`;
+
+    document.getElementById("nextButton").disabled = false;
+
+}
+
+function nextQuestion() {
+
+    if (!answered) return;
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showResults();
+
+    }
+
+}
+
+function showResults() {
+
+    document.getElementById("quiz").style.display = "none";
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    document.getElementById("finalScore").textContent =
+        score + " / 3";
+
+    if (score === 3) {
+
+        document.getElementById("resultEmoji").textContent = "🏆";
+
+        document.getElementById("resultMessage").textContent =
+            "Amazing! You understand how to be a responsible digital citizen!";
+
+    } else if (score === 2) {
+
+        document.getElementById("resultEmoji").textContent = "🌟";
+
+        document.getElementById("resultMessage").textContent =
+            "Good job! You have a good understanding of digital citizenship. Keep learning!";
+
+    } else {
+
+        document.getElementById("resultEmoji").textContent = "💪";
+
+        document.getElementById("resultMessage").textContent =
+            "Keep practising! Remember to respect privacy and always ask for permission before sharing photographs.";
+
+    }
+
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("result").style.display = "none";
+
+    document.getElementById("quiz").style.display = "block";
+
+    loadQuestion();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
